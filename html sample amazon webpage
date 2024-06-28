@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Simple Page</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('https://i.pinimg.com/564x/8a/b0/12/8ab0121c7d7a90f6415b4b0edaf035d9.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown, .button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #e68a00;
+            transform: translateY(-10px);
+        }
+        .links a {
+            margin: 0 10px;
+            color: #0066c0;
+            transition: color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+        .links a:hover {
+            color: #ff9900;
+            transform: translateY(10px);
+        }
+        table {
+            margin-top: 20px;
+            width: 100%;
+            table-layout: fixed;
+        }
+        td {
+            text-align: center;
+            padding: 10px;
+            vertical-align: top;
+        }
+        img {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 150px;
+            cursor: pointer;
+        }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .price {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .price .mrp {
+            text-decoration: line-through;
+            color: #a0a0a0;
+        }
+        .price .offer {
+            color: #b12704;
+            font-weight: bold;
+        }
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 400px;
+        }
+        .product p {
+            margin: 10px 0;
+        }
+        .product .price, .product .button {
+            margin-top: auto;
+        }
+        .fullscreen {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            display: block;
+            margin-top: 5%;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" width="200">
+            <div style="margin: 20px;">
+                <select class="dropdown">
+                    <option value="home">Home</option>
+                    <option value="shop">Shop by Category</option>
+                    <option value="deals">Today's Deals</option>
+                    <option value="customer">Customer Service</option>
+                </select>
+            </div>
+            <div style="margin: 20px;">
+                <input type="button" value="Sign In" class="button">
+                <input type="button" value="Cart" class="button">
+                <input type="button" value="Orders" class="button">
+            </div>
+            <div class="links" style="margin: 20px;">
+                <a href="#">Best Sellers</a> | 
+                <a href="#">New Releases</a> | 
+                <a href="#">Gift Ideas</a> | 
+                <a href="#">Customer Service</a>
+            </div>
+            <div>
+                <table cellspacing="0">
+                    <tr>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/hf2CQvHr9KNtKuUSDkeQVH-1200-80.jpg.webp" alt="Product 1" onclick="openFullscreen('https://cdn.mos.cms.futurecdn.net/hf2CQvHr9KNtKuUSDkeQVH-1200-80.jpg.webp')">
+                                <p>iPhone 15</p>
+                                <div class="price">
+                                    <span class="mrp">RS 89,999</span> <span class="offer">RS 79,999</span>
+                                </div>
+                                <a href="https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX1W1XY/ref=sr_1_1_sspa?crid=BTG9AZPURPS&dib=eyJ2IjoiMSJ9.8-aKrERwPzdGyJWfWOa56I4wwdlI59jT8Bz9mNMoRuLxnke6sBJUuQ8SlT5C5udwTqI4_4NyLvTLWyt-ntHvTXT0FKl-mezS3N8beOsweTXgbo3cyz8SiBb_JoD98srEb_YBhsaRUHlacif6-9397hhT7MibBVQ_H7YBBEz7AVdeiofhTYsOqng1mImkulIo_2gs7mH1dCykxBgEpMGo8E7nqLXc019kDyqpKyOVUqU.ITy30T8ri3TB-KHBJBIxfWsIUfDACzrRIMyJdek3o28&dib_tag=se&keywords=iphone+15&qid=1719560192&sprefix=iphon%2Caps%2C721&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" class="button">BUY NOW</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/BjkyajSQiHxgCWcsdbLsDD-1200-80.jpg.webp" alt="Product 2" onclick="openFullscreen('https://cdn.mos.cms.futurecdn.net/BjkyajSQiHxgCWcsdbLsDD-1200-80.jpg.webp')">
+                                <p>iPhone 15 Pro Max</p>
+                                <div class="price">
+                                    <span class="mrp">RS 1,59,999</span> <span class="offer">RS 1,39,999</span>
+                                </div>
+                                <a href="https://www.amazon.in/Apple-iPhone-Pro-Max-256/dp/B0CHWV2WYK/ref=sr_1_1_sspa?crid=26NTGZK842O83&dib=eyJ2IjoiMSJ9.dVABcK2QHCS6eKC7OM7pMsz8sM3LR3CRWoYKRolMFwp6YYmEpHxp1ek5oho5l2JwEpQ2X23YonjudGFooUNZ3CHcu6quY6kqjfJf7KEelGdvFVWrEJyySP0Yce1bRJ6xg6ZhItD1VgRsmjC41nIG3c7Drv31GAza_ldGLVhIEybEAAaH9OhU55MB6oeJd_ZLDFZIN7rkobORyI0OSfkbn7C8rAmmeSe3AG1VK5dfqAs.cFku5YGLIfj5Lo81_Gi2AIM-slJt09yB31FT4mSyVAA&dib_tag=se&keywords=iphone+15+pro+max&qid=1719560207&sprefix=iphone+15+%2Caps%2C257&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" class="button">BUY NOW</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/saaRkCfGBnAQQUduRdyqgn-1200-80.jpg.webp" alt="Product 3" onclick="openFullscreen('https://cdn.mos.cms.futurecdn.net/saaRkCfGBnAQQUduRdyqgn-1200-80.jpg.webp')">
+                                <p>Google Pixel 8</p>
+                                <div class="price">
+                                    <span class="mrp">RS 69,999</span> <span class="offer">RS 63,999</span>
+                                </div>
+                                <a href="https://www.amazon.in/Pixel-Hazel-8GB-128GB-Storage/dp/B0D6MYNJJV/ref=sr_1_1_sspa?crid=DL6T0JVD9LXL&dib=eyJ2IjoiMSJ9.-1KvtobQc_-RHe88d_bVL3vQ0MjYExV-ywq1Mx2tPGv28wekMacI4WpAXIz6ElXbu4k_b1efr0qz-sM1n1wX-IF1Odejxz6umGOg_TS-XD_eKjbrlinME53udXIfaSDemAn03C1F0fFAI_9A9jeY9vFkn4w1xx_csRvhPcg5rQop_BjqsCjD7IarKKYb08IgYBnAk8tNTmOuqRGrbLtR2JuGcg412EaBs5-v0eS4G0I.yWJdeHmOpHRXGrrLqro6cJUrh6NPS5M2csYfhjmQDd0&dib_tag=se&keywords=google%2Bpixel%2B8&qid=1719560331&sprefix=google%2B%2Caps%2C291&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" class="button">BUY NOW</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/YYWZVayTG47S7N4y9Lbzva-1200-80.jpg.webp" alt="Product 4" onclick="openFullscreen('https://cdn.mos.cms.futurecdn.net/YYWZVayTG47S7N4y9Lbzva-1200-80.jpg.webp')">
+                                <p>Samsung Galaxy S24 Plus</p>
+                                <div class="price">
+                                    <span class="mrp">RS 1,29,999</span> <span class="offer">RS 1,09,999</span>
+                                </div>
+                                <a href="https://www.amazon.in/s?k=samsung+galaxy+s24+plus&crid=1L4I33QAZCFT&sprefix=samsung+galaxy+s24+plus%2Caps%2C282&ref=nb_sb_noss_1" class="button">BUY NOW</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/o7WpTNgtTH6ttjokMnFtiG-1200-80.jpg.webp" alt="Product 5" onclick="openFullscreen('https://cdn.mos.cms.futurecdn.net/o7WpTNgtTH6ttjokMnFtiG-1200-80.jpg.webp')">
+                                <p>Samsung Galaxy S24 Ultra</p>
+                                <div class="price">
+                                    <span class="mrp">RS 1,49,999</span> <span class="offer">RS 1,39,999</span>
+                                </div>
+                                <a href="https://www.amazon.in/Samsung-Galaxy-Smartphone-Titanium-Storage/dp/B0CS5Z3T4M/ref=sr_1_1?crid=3MB2RVIK31REX&dib=eyJ2IjoiMSJ9.4P8mgIyS6Wf0zGUUhDJvzdd_8mpTRQ-Up9uOUyLqvYrsK67bZhU9wrtRDN_6F07LqxwXcEwUT43IRHtcOblg42N_lYlQ4cvD8A4rR0Vk21sbdEaelupXHddRjTEL_DHC2FuMoW8M_8zpf9D9aCwrw6AqpDBKUtqttuEvIydUFYhZq6HASTg5szy1MLYv0q_qkYUSDCDrZ8cuiUhEpEdvAwSn0fwb8QzxVOMIZRtOZVw.ScY_ctU4hEen4naK0Tk799BqyewYsS3FjJqgUFyrpx0&dib_tag=se&keywords=samsung%2Bgalaxy%2Bs24%2Bultra&qid=1719560350&sprefix=samsung%2Bgala%2Caps%2C282&sr=8-1&th=1" class="button">BUY NOW</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/NAuNBEEy3vx6psNhufHDed-1200-80.jpg.webp" alt="Product 6" onclick="openFullscreen('https://cdn.mos.cms.futurecdn.net/NAuNBEEy3vx6psNhufHDed-1200-80.jpg.webp')">
+                                <p>OnePlus 12R</p>
+                                <div class="price">
+                                    <span class="mrp">RS 45,550</span> <span class="offer">RS 38,870</span>
+                                </div>
+                                <a href="https://www.amazon.in/s?k=oneplus+12r&crid=2LJ3L8GA46R88&sprefix=one+plues+%2Caps%2C1228&ref=nb_sb_ss_ts-doa-p_1_10" class="button">BUY NOW</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </center>
+    <div class="fullscreen" id="fullscreen">
+        <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+        <img id="fullscreen-img">
+    </div>
+    <script>
+        function openFullscreen(imgSrc) {
+            var fullscreen = document.getElementById('fullscreen');
+            var fullscreenImg = document.getElementById('fullscreen-img');
+            fullscreenImg.src = imgSrc;
+            fullscreen.style.display = 'block';
+        }
+
+        function closeFullscreen() {
+            var fullscreen = document.getElementById('fullscreen');
+            fullscreen.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
