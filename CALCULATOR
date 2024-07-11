@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Animal Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #d1f7d6;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+        }
+
+        .calculator {
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 350px;
+        }
+
+        .display {
+            background: #222;
+            color: #fff;
+            text-align: right;
+            padding: 20px;
+            font-size: 2em;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .display input {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            text-align: right;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+        }
+
+        .btn {
+            background: #eee;
+            border: none;
+            padding: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ddd;
+        }
+
+        .equal {
+            background: #f9a825;
+            color: #fff;
+        }
+
+        .equal:hover {
+            background: #f57f17;
+        }
+
+        .ears {
+            width: 100%;
+            height: 50px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+            position: absolute;
+            top: -30px;
+        }
+
+        .ear {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .eyes {
+            width: 100%;
+            height: 30px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+            position: absolute;
+            top: -10px;
+        }
+
+        .eye {
+            width: 15px;
+            height: 15px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .nose {
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="ears">
+            <div class="ear"></div>
+            <div class="ear"></div>
+        </div>
+        <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="display">
+            <input type="text" id="result" disabled>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="deleteLast()">⌫</button>
+            <button class="btn" onclick="appendToDisplay('%')">%</button>
+            <button class="btn" onclick="appendToDisplay('/')">÷</button>
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn" onclick="appendToDisplay('*')">×</button>
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn" onclick="appendToDisplay('-')">−</button>
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn" onclick="appendToDisplay('+')">+</button>
+            <button class="btn" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" onclick="appendToDisplay('.')">.</button>
+            <button class="btn equal" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script>
+        function clearDisplay() {
+            document.getElementById('result').value = '';
+        }
+
+        function deleteLast() {
+            let display = document.getElementById('result');
+            display.value = display.value.slice(0, -1);
+        }
+
+        function appendToDisplay(value) {
+            let display = document.getElementById('result');
+            display.value += value;
+        }
+
+        function calculateResult() {
+            let display = document.getElementById('result');
+            try {
+                display.value = eval(display.value);
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
+---------------------
