@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<head>
+    <title>Amazon Simple Page</title>
+    <style>
+        /* Universal Selector */
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        /* Internal CSS */
+        body {
+            background: url('https://i.pinimg.com/564x/8a/b0/12/8ab0121c7d7a90f6415b4b0edaf035d9.jpg') no-repeat center center fixed;
+            background-size: cover ;
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown, .button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #e68a00;
+            transform: translateY(-10px);
+        }
+        .links a {
+            margin: 0 10px;
+            color: #0066c0;
+            transition: color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+        .links a:hover {
+            color: #ff9900;
+            transform: translateY(10px);
+        }
+        table {
+            margin-top: 20px;
+            width: 100%;
+            table-layout: fixed;
+        }
+        td {
+            text-align: center;
+            padding: 10px;
+            vertical-align: top;
+        }
+        img {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 150px;
+        }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .price {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .price .mrp {
+            text-decoration: line-through;
+            color: #a0a0a0;
+        }
+        .price .offer {
+            color: #b12704;
+            font-weight: bold;
+        }
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 400px; /* Fixed height for all product containers */
+        }
+        .product p {
+            margin: 10px 0;
+        }
+        .product .price, .product .button {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" width="200">
+            <div style="margin: 20px;">
+                <select class="dropdown">
+                    <option value="home">Home</option>
+                    <option value="shop">Shop by Category</option>
+                    <option value="deals">Today's Deals</option>
+                    <option value="customer">Customer Service</option>
+                </select>
+            </div>
+            <div style="margin: 20px;">
+                <input type="button" value="Sign In" class="button">
+                <input type="button" value="Cart" class="button">
+                <input type="button" value="Orders" class="button">
+            </div>
+            <div class="links" style="margin: 20px;">
+                <a href="#">Best Sellers</a> | 
+                <a href="#">New Releases</a> | 
+                <a href="#">Gift Ideas</a> | 
+                <a href="#">Customer Service</a>
+            </div>
+            <div>
+                <table cellspacing="0">
+                    <tr>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/hf2CQvHr9KNtKuUSDkeQVH-1200-80.jpg.webp" alt="Product 1">
+                                <p>iPhone 15</p>
+                                <div class="price">
+                                    <span class="mrp">RS 89,999</span> <span class="offer">RS 79,999</span>
+                                </div>
+                                <button class="button">BUY NOW</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/BjkyajSQiHxgCWcsdbLsDD-1200-80.jpg.webp" alt="Product 2">
+                                <p>iPhone 15 Pro Max</p>
+                                <div class="price">
+                                    <span class="mrp">RS 1,59,999</span> <span class="offer">RS 1,39,999</span>
+                                </div>
+                                <button class="button">BUY NOW</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/saaRkCfGBnAQQUduRdyqgn-1200-80.jpg.webp" alt="Product 3">
+                                <p>Google Pixel 8</p>
+                                <div class="price">
+                                    <span class="mrp">RS 69,999</span> <span class="offer">RS 63,999</span>
+                                </div>
+                                <button class="button">BUY NOW</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/YYWZVayTG47S7N4y9Lbzva-1200-80.jpg.webp" alt="Product 4">
+                                <p>Samsung Galaxy S24 Plus</p>
+                                <div class="price">
+                                    <span class="mrp">RS 1,29,999</span> <span class="offer">RS 1,09,999</span>
+                                </div>
+                                <button class="button">BUY NOW</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/o7WpTNgtTH6ttjokMnFtiG-1200-80.jpg.webp" alt="Product 5">
+                                <p>Samsung Galaxy S24 Ultra</p>
+                                <div class="price">
+                                    <span class="mrp">RS 1,49,999</span> <span class="offer">RS 1,39,999</span>
+                                </div>
+                                <button class="button">BUY NOW</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product">
+                                <img src="https://cdn.mos.cms.futurecdn.net/NAuNBEEy3vx6psNhufHDed-1200-80.jpg.webp" alt="Product 6">
+                                <p>OnePlus 12R</p>
+                                <div class="price">
+                                    <span class="mrp">RS 45,550</span> <span class="offer">RS 38,870</span>
+                                </div>
+                                <button class="button">BUY NOW</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
