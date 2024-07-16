@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .yogesh{
+            border: 2px solid;
+            height: 300px;
+            display: grid;
+            grid-template-columns: 3fr 4fr 6fr;
+            gap: 5px;
+        }
+        .yogesh div{
+            border: 2px solid;
+        }
+        .child1{
+            grid-row: 1/2;
+            grid-column: 1/4;
+        }
+        .child2{
+            grid-row: 2/5;
+            grid-column: 1/2;
+        }
+        .child3{
+            grid-row: 2/5;
+            grid-column:2/4;
+        }
+        .child4{
+            grid-row: 5/6;
+            grid-column: 1/4;
+        }
+    </style>
+</head>
+<body>
+    <div class="yogesh">
+       <div  class="child1"><h1 align="center">Lorem, ipsum.</h1></div>
+       <div class="child2"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, totam.</p></div>
+       <div class="child3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita exercitationem quod facilis, aliquid iste culpa ullam quae sunt veritatis quas accusantium maxime, architecto sequi aut tempora ab velit libero!</p></div>
+       <div class="child4"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor consequatur eaque perspiciatis odit? Iure reiciendis aspernatur alias nam pariatur tenetur!</p></div>
+       
+       
+    </div>
+    
+</body>
+</html>

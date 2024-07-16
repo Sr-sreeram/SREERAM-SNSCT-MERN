@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Title</title>
+<div>
+    <h2 style="background-color: tomato; display: inline-block;">The ContextMenu</h2>
+    <p id="nw" style="background-color: cadetblue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque veritatis sint maxime dolore ipsum, eligendi at dolorum. Repudiandae blanditiis nisi, officiis voluptatem culpa voluptatum, vero dolorum placeat quis corrupti labore veritatis beatae facere recusandae explicabo magni nostrum sunt optio dicta nihil deleniti! Delectus eius provident recusandae voluptate voluptatibus, unde maiores.</p>
+</div>
+
+<script>
+    let menu = null;
+    document.addEventListener('DOMContentLoaded', function(){
+        //make sure the right click menu is hidden
+        menu = document.querySelector('.menu');
+        menu.classList.add('off');
+       
+        //add the right click listener to the box
+        let box = document.getElementById('box');
+        box.addEventListener('contextmenu', showmenu);
+       
+        //add a listener for leaving the menu and hiding it
+        menu.addEventListener('mouseleave', hidemenu);
+       
+        //add the listeners for the menu items
+        addMenuListeners();
+    });
+   
+    function addMenuListeners(){
+        document.getElementById('red').addEventListener('click', setColour);
+        document.getElementById('gold').addEventListener('click', setColour);
+        document.getElementById('green').addEventListener('click', setColour);
+    }
+   
+    function setColour(ev){
+        hidemenu();
+        let clr = ev.target.id;
+        document.getElementById('box').style.backgroundColor = clr;
+    }
+   
+    function showmenu(ev){
+        ev.preventDefault();
+        //show the custom menu
+        // console.log( ev.clientX, ev.clientY );
+        menu.style.top = ${ev.clientY }px;
+        menu.style.left = ${ev.clientX }px;
+        menu.classList.remove('off');
+    }
+   
+    function hidemenu(ev){
+        menu.classList.add('off');
+        menu.style.top = '-200%';
+        menu.style.left = '-200%';}
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

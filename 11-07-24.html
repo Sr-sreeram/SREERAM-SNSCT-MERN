@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button data-collegeName="snsct" class="buy">click here1</button>
+    <button data-sns="snsce" class="buy">click here2</button>
+    <button data-value="vivo" class="buy">click here3</button>
+    <button data-price="oppo" class="buy">click here4</button>
+    <button data-value="oneplus" class="buy">click here5</button>
+
+    <!-- <button class="button1">click here10</button> -->
+
+
+    <script>
+        // document.querySelector('.button1').addEventListener('click', function() {
+        //     alert('Hello World!');
+        // });
+
+        function buyHandler(event) {
+
+            // alert("the handler"+ buts);
+            console.log(event.target.dataset)
+           document.write("You are buying an "+ event.target.dataset.collegename);
+        }
+        const buttons = document.querySelectorAll("button.buy")
+
+        // console.log(buttons)
+        buttons.forEach(function (buts) {
+            buts.addEventListener('click',buyHandler)
+        }
+        )
+    </script>
+</body>
+
+</html>

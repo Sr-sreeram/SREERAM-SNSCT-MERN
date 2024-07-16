@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>RanQuote</title>
+    <style>
+        .h{
+            height: 450px ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body h">
+                <h2 class="card-title text-center text-danger h1 fw-bold">Random Quote Generator</h2>
+                <p id="quote" class="card-text my-5"></p>
+            </div>
+        </div>
+        <div class="card-footer d-inline-block">
+            <button class="btn btn-primary" onclick="generateRanQuote()">Get Another Quote</button>
+        </div>
+    </div>
+
+
+    <script>
+        var quotes = [
+            {
+                quote: "The secret to a happy life is to find something you're willing to lose for it.",
+                author: "Haruki Murakami"
+            },
+            {
+                quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+                author: "Person 1"
+            },
+            {
+                quote: "Believe you can and you're halfway there.",
+                author: "Benjamin Franklin"
+            },
+            {
+                quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+                author: "Person 2"
+            },
+            {
+                quote: "It's not the destination, but the journey that matters.",
+                author: "Ralph Waldo Emerson"
+            },
+            {
+                quote: "Success is not final, failure is not fatal: It is the cour",
+                author: 'San'
+            },
+            {
+                quote: "If you want to find the secrets of the universe, think in terms of energy, frequency and vibration.",
+                author: "Nikola Tesla"
+            }];
+
+
+            function generateRanQuote(){
+                var randomIndex = Math.floor(Math.random() * quotes.length);
+                var randomQuote = quotes[randomIndex];
+                document.getElementById("quote").innerHTML ="<h1 class ='display-4 fw-bold text-success'>" + randomQuote.quote + '<br>' + "<h1 class='h5 text-warning'> Author: " + randomQuote.author;
+
+            }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

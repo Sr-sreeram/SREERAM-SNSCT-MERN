@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - Flipkart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .center {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .form-container p {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff9f00;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffbf47;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAzAMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYBAwQHAv/EAEAQAAICAQIDAwcICAYDAAAAAAABAgMEBREGEiETMVEHIjJBcYGhFTRTYZGxwdEUM0JScqLh8CQlQ1Sy8RYXI//EABsBAQACAwEBAAAAAAAAAAAAAAABAwIEBQYH/8QANBEBAAICAQIEAggFBQEAAAAAAAECAwQRBSESMUFRE4EGFBUiI1JhsTIzNHGhFkKR0fDB/9oADAMBAAIRAxEAPwD3EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOW/Ox6J8lliUvAhZ+oa+C3hyW7ttMN7d4hr+VcTbftPgaPtjT/O9fVsnsfKuJ9J8B9saf5j6tk9h6pifS/AfbOl+c+r5PY+VcT6T4D7Z0/zn1bJ7PqvU8WcuVWpP61sesfVtPJbw1uxbXyRHPDrT3RZNLIAAAAAAAAAAAAAAAAAAAANV1yprc312NGxnrgxzkt6M1jmeFey6+1unbGMVzvd+cjhduZz5bZe0crPHeKUis+jiyMa6bi4RbcXvsppbmqtJ49G34tZ9WqVed+zR/OhGLn/AHQ21yY/WWI1Z+/Wj+dD4VfeGZy4m6GLkOztJQae223OtjM4+3HZonJTnzdEcaUpefFbfXJHiuG0cW7dmLZo44hO4+dWqkp+bJdNk0ddg6vh8ERk7SrrYp57OHiPiXE0DsVlQtslbvsq/VsdHrat9jnw+iBsbVMHHi9UJ/7K0r/bZX2L8yX9k5veEX7Uw+yT0HjDC1vJtox6roSrrdj50ttk9iPsaWTBETb1b8G5jzTMV9GNG4xwdX1N4GNVfGe0mpyiuV8veZzaOTDijJbyMO7TNeaV8ziHjHB0LLji3V222uPNJV7eajGto5M9fFXyNjdx4LeG3mn8PIhlY1WRU3yWwU47+DW5EtWazNZS628Ucw3GGQCtaxxlgaVqr066q+dycU3BLZc3d95Nw6GTLj+JE9kLNu48WT4c+ayJ7pPxISayAAAAAGnIyKcdJ33V1J9znJLczFZt5Q82tWvnLZCSlFSi00+5r1mHp9AcmpfNJlV1n+jv8m3D/HCG3OH5T2ynabnXst5LaL+snafht4sc+c+TXft3a303Xh0aIlqTWZi0PURE92N9jxLMxEd25rs8aO62lJ9E+9FjavwdX78d5a6zzZpT+0rolt4E9u4zDPEKZ5VL+fW6qV31Y+/2v+h9q6VTjFNveXGdTtzlivtC26Vwfo0tMxJZGFGdrpi5Sbe7bRX5d3NF7RFu3KxxaeGaVmY9HRlaTpugaTqGVgY0aJ9hJOSb3fT8zXXNkz5Kxaee71bDjw47TWOOym+SujtNZyclr9Xj7J/W31+4s+rW4xRRW9Lrzkm7t4nz9CyuKFiZmmXXZEbIUythbyp7tbdPeatbFnjX8dbcR7NuzlwTn8Nq8yn9c4qxtAz8bTv0WU1JLrCSShHfYiYNO+fHOTlLzbdMF64+EfrHlFw8TIlTgUPK5JbOxy2i/HbxN2LpeS8c3nhoy9TpS3hrHKb4X4lxuIaLJVQnVdW/Pqk99k+5p+BF2tW+vMeLylK1tqmeJmvm87zf8z8oLj6UZ5qivZHb8i6pHw9Ln9P3VF/xNz5vQeKeKMfh7sY2Uyvst3ahGW2yXrKfV1LbHPE8RC22tuuvxzHMy34/EGNLQIaxlxli0yjvyz6v6kvHc8W1r/G+DXvL1XZrOL4tu0Ktl+U2mNrWLgylBP0rJ7N+4n06TaY+9ZCt1WsT2q69I8oVWoZtGJZgWVzunyxlGSa3PGXpdqVm3i8nvF1KuS8U8PmkNW4uo0zXqtKlROcp8nNYpJKPN/aI+LTtkwTmifk3Zd2uPNGKY+bXLjbCs1ynTcKqzI57OzncntGPs8T19n5K4pyWnhid6k5Yx1jlRONuII69m1qFUq6sbmglJ78z37/gW2lrfAp3nvKq3tj49+0eS+8Da/Vq+G8anHlUsSEIbuSafT+hUbutbDbmZ55Wuls1zV4iOOFpXcQk5yap8zn7UVXWv6K/y/dtw/xwg9zhVjwN9O9oz">
+            <h2>Login to Flipkart</h2>
+        </div>
+
+        <div class="form-container">
+            <form action="#">
+                <p>Email or mobile number</p>
+                <input type="text" placeholder="Enter your email or mobile number">
+
+                <p>Password</p>
+                <input type="password" placeholder="Enter your password">
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
